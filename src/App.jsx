@@ -60,8 +60,7 @@ function Nav({ dark, setDark }) {
             M
           </span>
 
-        
-
+      
 
 <span className="min-w-0 leading-tight">
   {/* Premium Mobile Branding */}
@@ -315,7 +314,7 @@ const Footer = () => <footer className="border-t border-slate-200 bg-slate-50 da
 
 /* ---------- app ---------- */
 export default function App() {
-  const [dark, setDark] = useState(() => !(localStorage.theme === 'light')); const [load, setLoad] = useState(true); const [toastMsg, toast] = useToast(); const route = useHash()
+  const [dark, setDark] = useState(false); const [load, setLoad] = useState(true); const [toastMsg, toast] = useToast(); const route = useHash()
   useEffect(() => { document.documentElement.classList.toggle('dark', dark); try { localStorage.theme = dark ? 'dark' : 'light' } catch { } }, [dark])
   useEffect(() => { const t = setTimeout(() => setLoad(false), 800); return () => clearTimeout(t) }, [])
   useEffect(() => { document.title = route.startsWith('/mern') ? 'MERN Stack Course (Online) | Modern Institute of Computers' : route.startsWith('/careers') ? 'Careers | Modern Institute of Computers' : 'Modern Institute of Computers | MERN Stack, ADCA, DCA – Anantnag' }, [route])
